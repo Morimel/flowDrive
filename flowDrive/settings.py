@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 import os
 from pathlib import Path
+import dj_database_url  
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-+4-&&o7@up(7rv&q*q=!ha-+kf6aayn*ldq^%6_n-3p90c^t#a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['flowDrive.pythonanywhere.com']
+ALLOWED_HOSTS = ['flowDrive.pythonanywhere.com', '*']
 
 
 # Application definition
@@ -106,6 +107,8 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES['default'] = dj_database_url.parse('postgresql://flowdrive_user:ZRIPuQEmH2irtVWYjCXNxmGHKvXn69sm@dpg-ct005sogph6c73bg8ebg-a/flowdrive')
 
 
 # Password validation
